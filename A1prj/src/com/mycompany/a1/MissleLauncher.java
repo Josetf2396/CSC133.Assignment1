@@ -6,5 +6,8 @@ public class MissleLauncher implements ISteerable {
 		// TODO Auto-generated method stub
 
 	}
+	public String toString(){
+		return();
+	}
 
 }

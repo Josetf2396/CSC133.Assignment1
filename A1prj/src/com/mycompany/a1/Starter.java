@@ -64,5 +64,9 @@ public class Starter {
     
     public void destroy() {
     }
+    
+    public String toString(){
+		return();
+	}
 
 }
