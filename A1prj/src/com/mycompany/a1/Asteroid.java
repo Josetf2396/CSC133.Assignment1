@@ -1,6 +1,6 @@
 package com.mycompany.a1;
 
-public class Asteroid extends MovableGameObject {
+public class Asteroid implements IMoveable {
 	private int size;
 	
 	public Asteroid(){
