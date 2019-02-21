@@ -1,93 +1,206 @@
 package com.mycompany.a1;
+
+import com.codename1.ui.TextField;
+import com.codename1.ui.events.ActionListener;
+import com.codename1.ui.Label;
+import com.codename1.ui.events.ActionEvent;
+import java.lang.String;
+
 import come.codename1.ui.Form;
 
-
-
-public class Game extends Form{
+public class Game extends Form {
 
 	private GameWorld gw;
-	
+
 	public Game() {
 		gw = new GameWorld;
 		gw.init();
 		play();
 	}
-	
+
 	private void play() {
-		//Code here accept and execute user commands that operate on the game world
-		//(refer to "appendix")
-	}
-	
+		Label myLabel = new Label("Enter a Command:");
+		this.addComponent(myLabel);
+		final TextField myTextField = new TextField();
+		this.addComponent(myTextField);
+		this.show();
+		myTextField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				String sCommand = myTextField.getText().toString();
+				myTextField.clear();
+				switch (sCommand.charAt(0)) {
+				case 'a':
+					gw.asteroid();
+					break;
+				case 'y':
+					gw.nps();
+					break;
+				case 'b':
+					gw.blinkingStation();
+					break;
+				case 's':
+					gw.playerShip();
+					break;
+				case 'i':
+					gw.increaseSpeed();
+					break;
+				case 'd':
+					gw.decreaseSpeed();
+					break;
+				case 'l':
+					gw.turnLeft();
+					break;
+				case 'r':
+					gw.turnRight();
+					break;
+				case '>':
+					gw.turnMissleLauncher();
+					break;
+				case 'f':
+					gw.fire();
+					break;
+				case 'L':
+					gw.LaunchNpsMissle();
+					break;
+				case 'j':
+					gw.jump();
+					break;
+				case 'n':
+					gw.reloadMissle();
+					break;
+				case 'k':
+					gw.eliminateAstroid();
+					break;
+				case 'e':
+					gw.elimnateNPS();
+					break;
+				case 'E':
+					gw.explodePS();
+					break;
+				case 'c':
+					gw.crashPS();
+					break;
+				case 'h':
+					gw.hitNPS();
+					break;
+				case 'x':
+					gw.collideAsteroid();
+					break;
+				case 'I':
+					gw.collideAsteroidNPS();
+					break;
+				case 't':
+					gw.tick();
+					break;
+				case 'p':
+					gw.print();
+					break;
+				case 'm':
+					gw.map();
+					break;
+				case 'q':
+					gw.quit();
+					break;
+				// add code to handle rest of the commands
+				} // switch
+			} // actionPerformed
+		} // new ActionListener()
+		); // addActionListener
+	} // play
+
 	private void a() {
-		
+
 	}
+
 	private void y() {
-		
+
 	}
+
 	private void b() {
-		
+
 	}
+
 	private void s() {
-		
+
 	}
+
 	private void i() {
-		
+
 	}
+
 	private void d() {
-		
+
 	}
+
 	private void l() {
-		
+
 	}
+
 	private void r() {
-		
+
+	}private void>()
+
+	{
+
 	}
-	private void >() {
-		
-	}
+
 	private void f() {
-		
+
 	}
+
 	private void L() {
-		
+
 	}
+
 	private void j() {
-		
+
 	}
+
 	private void n() {
-		
+
 	}
+
 	private void k() {
-		
+
 	}
+
 	private void e() {
-		
+
 	}
+
 	private void E() {
-		
+
 	}
+
 	private void c() {
-		
+
 	}
+
 	private void h() {
-		
+
 	}
+
 	private void x() {
-		
+
 	}
+
 	private void I() {
-		
+
 	}
+
 	private void t() {
-		
+
 	}
+
 	private void p() {
-		
+
 	}
+
 	private void m() {
-		
+
 	}
+
 	private void q() {
-		
+
 	}
 }
