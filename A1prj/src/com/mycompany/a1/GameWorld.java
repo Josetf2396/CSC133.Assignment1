@@ -18,9 +18,72 @@ public class GameWorld {
 	public void nonPlayerShip() {
 		
 	}
-	public void playerShip() {
+	public void blinkingStation() {
 		
 	}
-	
+	public void playerShip(){
+		
+	}
+	public void increaseSpeed(){
+		
+	}
+	public void deacreaseSpeed(){
+		
+	}
+	public void turnLeft(){
+		
+	}
+	public void turnRight(){
+		
+	}
+	public void turnMissleLauncher(){
+		
+	}
+	public void fire(){
+		
+	}
+	public void launchNPSMissle(){
+		
+	}
+	public void jump(){
+		
+	}
+	public void reloadMissle(){
+		
+	}
+	public void eliminateAstroid(){
+		
+	}
+	public void eliminateNPS(){
+		
+	}
+	public void explodePS(){
+		
+	}
+	public void crashPS(){
+		
+	}
+	public void hitNPS(){
+		
+	}
+	public void collideAstroid(){
+		
+	}
+	public void colliseAstroidNPS(){
+		
+	}
+	public void tick(){
+		
+	}
+	public void print(){
+		
+	}
+	public void map(){
+		
+	}
+	public void quit(){
+		
+	}
 }
+
 
