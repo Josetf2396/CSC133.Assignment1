@@ -1,5 +1,5 @@
 package com.mycompany.GameObjects;
 
-public class GameObject {
+public class GameObject{
 
 }
