@@ -5,9 +5,8 @@ import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.Label;
 import com.codename1.ui.events.ActionEvent;
 import java.lang.String;
-import come.codename1.ui.Form;
 
-public class Game extends Form {
+public class Game {
 
 	private GameWorld gw;
 

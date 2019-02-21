@@ -13,15 +13,22 @@ public abstract class GameObject{
 	private static int g;
 	private static int b;
 	
-	public void getX() {
+	public float getX() {
 		return this.x;
 	}
 	public void setX(float X){
 		this.x = X;
 	}
-	
+	public float getY() {
+		return this.y;
+		
+	}
 	public void setY(float Y) {
 		this.y = Y
+	}
+	
+	public int getColor() {
+		return this.getColor();
 	}
 	public void setColor(int R, int G, int B) {
 		this.r = R;
@@ -29,6 +36,13 @@ public abstract class GameObject{
 		this.b = B;
 		colorutil.rgb(R,G,B)
 	}
+	
+	public String toString() {
+		return "Location = ("this.x +","+this.y+")"
+			   " Color = ("+this.r+","+this.g+","+this.b+")";
+	}
+	
+	
 	
 	
 	
