@@ -19,5 +19,8 @@ public class GameWorld {
 		
 	}
 	public void playerShip() {
+		
+	}
+	
 }
 
