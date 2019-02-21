@@ -32,7 +32,7 @@ public class Game extends Form {
 					gw.addNewAstroid();
 					break;
 				case 'y':
-					gw.nonPlayerShipS();
+					gw.nonPlayerShip();
 					break;
 				case 'b':
 					gw.blinkingStation();
@@ -59,7 +59,7 @@ public class Game extends Form {
 					gw.fire();
 					break;
 				case 'L':
-					gw.LaunchNpsMissle();
+					gw.launchNPSMissle();
 					break;
 				case 'j':
 					gw.jump();
