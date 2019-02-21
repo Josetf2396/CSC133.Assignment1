@@ -1,5 +1,6 @@
 package com.mycompany.a1;
 import com.mycompany.GameObjects.*;
+import com.mycompany.Objects.Asteroid;
 
 public class GameWorld {
 	Random random = new Random();
