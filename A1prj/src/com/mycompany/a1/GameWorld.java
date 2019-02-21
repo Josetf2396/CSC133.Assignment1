@@ -15,6 +15,9 @@ public class GameWorld {
 		store.add(asteroid);
 		System.out.println("A new Asteroid has been created.");
 	}
-	
+	public void nonPlayerShip() {
+		
+	}
+	public void playerShip() {
 }
 

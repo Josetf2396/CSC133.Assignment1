@@ -5,7 +5,6 @@ import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.Label;
 import com.codename1.ui.events.ActionEvent;
 import java.lang.String;
-
 import come.codename1.ui.Form;
 
 public class Game extends Form {
@@ -30,7 +29,7 @@ public class Game extends Form {
 				myTextField.clear();
 				switch (sCommand.charAt(0)) {
 				case 'a':
-					gw.asteroid();
+					gw.addNewAstroid();
 					break;
 				case 'y':
 					gw.nps();
@@ -107,100 +106,3 @@ public class Game extends Form {
 		} // new ActionListener()
 		); // addActionListener
 	} // play
-
-	private void a() {
-
-	}
-
-	private void y() {
-
-	}
-
-	private void b() {
-
-	}
-
-	private void s() {
-
-	}
-
-	private void i() {
-
-	}
-
-	private void d() {
-
-	}
-
-	private void l() {
-
-	}
-
-	private void r() {
-
-	}private void>()
-
-	{
-
-	}
-
-	private void f() {
-
-	}
-
-	private void L() {
-
-	}
-
-	private void j() {
-
-	}
-
-	private void n() {
-
-	}
-
-	private void k() {
-
-	}
-
-	private void e() {
-
-	}
-
-	private void E() {
-
-	}
-
-	private void c() {
-
-	}
-
-	private void h() {
-
-	}
-
-	private void x() {
-
-	}
-
-	private void I() {
-
-	}
-
-	private void t() {
-
-	}
-
-	private void p() {
-
-	}
-
-	private void m() {
-
-	}
-
-	private void q() {
-
-	}
-}
