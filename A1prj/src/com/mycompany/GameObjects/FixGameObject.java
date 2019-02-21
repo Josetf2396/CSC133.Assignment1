@@ -2,7 +2,7 @@ package com.mycompany.GameObjects;
 
 public class FixGameObject extends GameObject{
 
-	public void getID() {
-		
-	}
+	private static int uniqueID=1;
+	private int id;
+	
 }
