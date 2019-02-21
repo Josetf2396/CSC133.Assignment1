@@ -1,10 +1,10 @@
 package com.mycompany.Objects;
 
-import com.mycompany.GameObjects.GameObject;
-import com.mycompany.GameObjects.MoveableGameObject;
+import com.mycompany.GameObjects.*;
 
 public class Asteroid extends MoveableGameObject {
 	private int size;
+	
 	
 	public Asteroid(){
 		super(ColorUtil.BLACK);
@@ -13,8 +13,8 @@ public class Asteroid extends MoveableGameObject {
 		this.size = GameObject.rand.netInt(MAX_SIZE-MIN_SIZE+1)+MIN_SIZE;
 	}
 	
-	public int getSize(){
-		return this.size;
+	public void move(){
+		 MoveableGameObject.move();
 	}
 	
 	public String toString(){

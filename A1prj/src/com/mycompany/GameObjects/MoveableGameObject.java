@@ -1,26 +1,49 @@
 package com.mycompany.GameObjects;
 
-import com.mycompany.Interfaces.IMoveable;
+import com.mycompany.Interfaces.*;
 
-public class MoveableGameObject extends GameObject implements IMoveable {
+public abstract class MoveableGameObject extends GameObject implements IMoveable {
 
 	
-	public void move(int amount) {
+	private int speed;
+	private int direction;
+	/**
+	 * @Constuctor
+	 */
+	public void Moveable(){
 		
 	}
-
+	/**
+	 * @return the speed
+	 */
 	public int getSpeed() {
-		return 0;
-		
+		return speed;
 	}
+	/**
+	 * @param speed the speed to set
+	 */
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	/**
+	 * @return the direction
+	 */
 	public int getDirection() {
-		return 0;
+		return direction;
+	}
+	/**
+	 * @param direction the direction to set
+	 */
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+	
+	public void move(){
 		
 	}
-	public void setSpeed() {
-		
+	
+	public String toString(){
+		return("S");
 	}
-	public void setDirection() {
-		
-	}
+	
 }
