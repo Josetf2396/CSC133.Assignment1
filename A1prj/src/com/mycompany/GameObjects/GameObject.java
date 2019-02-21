@@ -1,6 +1,7 @@
 package com.mycompany.GameObjects;
 
 import com.codename1.charts.*;
+import com.codename1.charts.util.ColorUtil;
 
 public abstract class GameObject{
 	
@@ -11,5 +12,24 @@ public abstract class GameObject{
 	private static int r;
 	private static int g;
 	private static int b;
+	
+	public void getX() {
+		return this.x;
+	}
+	public void setX(float X){
+		this.x = X;
+	}
+	
+	public void setY(float Y) {
+		this.y = Y
+	}
+	public void setColor(int R, int G, int B) {
+		this.r = R;
+		this.g = G;
+		this.b = B;
+		colorutil.rgb(R,G,B)
+	}
+	
+	
 	
 }
