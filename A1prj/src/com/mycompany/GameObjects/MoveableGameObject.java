@@ -10,14 +10,14 @@ public abstract class MoveableGameObject extends GameObject implements IMoveable
 	/**
 	 * @Constuctor
 	 */
-	public void Moveable(){
+	public MoveableObject(){
 		
 	}
 	/**
 	 * @return the speed
 	 */
 	public int getSpeed() {
-		return speed;
+		return this.speed;
 	}
 	/**
 	 * @param speed the speed to set
@@ -29,7 +29,7 @@ public abstract class MoveableGameObject extends GameObject implements IMoveable
 	 * @return the direction
 	 */
 	public int getDirection() {
-		return direction;
+		return this.direction;
 	}
 	/**
 	 * @param direction the direction to set
@@ -43,7 +43,8 @@ public abstract class MoveableGameObject extends GameObject implements IMoveable
 	}
 	
 	public String toString(){
-		return("S");
+		return super.toString() + "Speed= " + this.speed + 
+								" Direction=  " + this.direction;
 	}
 	
 }
