@@ -1,28 +1,11 @@
-package com.mycompany.a1;
+package com.mycompany.GameObjects;
+//Note: Both classes, PlayerShip and MissileLauncher 
+//are required to have a composition relation.
 
-public class Asteroid implements IMoveable {
-	private int size;
-	
-	public Asteroid(){
-		super(ColorUtil.BLACK);
-		final int MIN_SIZE=6;
-		final int MAX_SIZE=30;
-		this.size = GameOBject.rand.netInt(MAX_SIZE-MIN_SIZE+1)+MIN_SIZE;
-	}
-	
-	public int getSize(){
-		return this.size;
-	}
-	
-	public String toString(){
-		return (
-			"Astroid : loc="+GameObject.round(getX()) + "," + GameObject.round(getY()) +
-			" Color="  + GameObject.getColorString(getColor())+
-			" Speed="  + GameObject.round(getSpeed()) +
-			" dir="    + getDirection()+
-			" Size="   + this.getSize()
-				);
-	}
+import com.mycompany.Interfaces.IMoveable;
+import com.mycompany.Interfaces.ISteerable;
+
+public class PlayerShip implements ISteerable, IMoveable {
 
 	@Override
 	public void move(int amount) {
@@ -71,4 +54,10 @@ public class Asteroid implements IMoveable {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public String toString(){
+		return();
+	}
+
+	
 }

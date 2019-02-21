@@ -1,11 +1,13 @@
-package com.mycompany.a1;
+package com.mycompany.GameObjects;
 
-public class Missle implements IMoveable {
+import com.mycompany.Interfaces.IMoveable;
 
-	@Override
+public class NonPlayerShip implements IMoveable {
+
+
 	public void move(int amount) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -49,5 +51,7 @@ public class Missle implements IMoveable {
 		// TODO Auto-generated method stub
 		
 	}
-
+	public String toString(){
+		return();
+	}
 }

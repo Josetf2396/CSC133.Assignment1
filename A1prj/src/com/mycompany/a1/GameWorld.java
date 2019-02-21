@@ -1,4 +1,5 @@
 package com.mycompany.a1;
+import com.mycompany.GameObjects.*;
 
 public class GameWorld {
 	Random random = new Random();

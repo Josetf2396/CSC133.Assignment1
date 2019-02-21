@@ -1,4 +1,6 @@
-package com.mycompany.a1;
+package com.mycompany.GameObjects;
+
+import com.mycompany.Interfaces.ISteerable;
 
 public class MissleLauncher implements ISteerable {
 

@@ -1,13 +1,13 @@
-package com.mycompany.a1;
-//Note: Both classes, PlayerShip and MissileLauncher 
-//are required to have a composition relation.
+package com.mycompany.GameObjects;
 
-public class PlayerShip implements ISteerable, IMoveable {
+import com.mycompany.Interfaces.IMoveable;
+
+public class MoveableGameObject implements IMoveable {
 
 	@Override
 	public void move(int amount) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -37,24 +37,19 @@ public class PlayerShip implements ISteerable, IMoveable {
 	@Override
 	public void setX(int x) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setY(int x) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setSpeed(int Speed) {
 		// TODO Auto-generated method stub
-		
-	}
-	
-	public String toString(){
-		return();
+
 	}
 
-	
 }

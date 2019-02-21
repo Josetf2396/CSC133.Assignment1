@@ -1,4 +1,5 @@
-package com.mycompany.a1;
+package com.mycompany.GameObjects;
+
 
 public class SpaceStation {
 	
