@@ -39,7 +39,18 @@ public abstract class MoveableGameObject extends GameObject implements IMoveable
 	}
 	
 	public void move(){
-		
+		float dX;
+		float dY;
+		float theta;
+		float newX;
+		float newY;
+		theta = 90 - this.direction; 
+		dX = (float) Math.cos(theta);
+		dY = (float) Math.sin(theta);
+		newX = (float) (Math.toDegrees(dX) * this.speed) + super.getX();
+		newY = (float) (Math.toDegrees(dY) * this.speed) + super.getY();
+		super.setX(newX);
+		super.setY(newY);
 	}
 	
 	public String toString(){
