@@ -1,4 +1,5 @@
 package com.mycompany.a1;
+
 import java.util.Vector;
 import com.mycompany.GameObjects.*;
 import com.mycompany.Objects.*;
@@ -7,88 +8,123 @@ public class GameWorld {
 	private int lives;
 	private int tick;
 	private Vector<GameObject> gObjects;
-	
+
 	public void init() {
 		tick = 0;
 		lives = 3;
 		gObjects = new Vector<GameObject>();
 	}
-	//additional methods here to manipulate world objects and related game state data
+
+	// additional methods here to manipulate world objects and related game state
+	// data
 	public void addNewAstroid() {
 		Asteroid asteroid = new Asteroid();
 		gObjects.add(asteroid);
 		System.out.println("A new Asteroid has been created.");
-		}
-	
+	}
+
 	public void nonPlayerShip() {
-		
+
 	}
+
 	public void blinkingStation() {
-		
-	} 
-	public void playerShip(){
-		
+
 	}
-	public void increaseSpeed(){
-		
+
+	public void playerShip() {
+		Player playership = Player.getShip();
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if ((!gObjects.contains(playership))) {
+					gObjects.add(playership);
+					break;
+				} else {
+					System.out.println("Ship Already exits");
+					playership.toString();
+					break;
+				}
+			}
+		}
+
 	}
-	public void deacreaseSpeed(){
-		
+
+	public void increaseSpeed() {
+
 	}
-	public void turnLeft(){
-		
+
+	public void deacreaseSpeed() {
+
 	}
-	public void turnRight(){
-		
+
+	public void turnLeft() {
+
 	}
-	public void turnMissleLauncher(){
-		
+
+	public void turnRight() {
+
 	}
-	public void fire(){
-		
+
+	public void turnMissleLauncher() {
+
 	}
-	public void launchNPSMissle(){
-		
+
+	public void fire() {
+
 	}
-	public void jump(){
-		
+
+	public void launchNPSMissle() {
+
 	}
-	public void reloadMissle(){
-		
+
+	public void jump() {
+
 	}
-	public void eliminateAstroid(){
-		
+
+	public void reloadMissle() {
+
 	}
-	public void eliminateNPS(){
-		
+
+	public void eliminateAstroid() {
+
 	}
-	public void explodePS(){
-		
+
+	public void eliminateNPS() {
+
 	}
-	public void crashPS(){
-		
+
+	public void explodePS() {
+
 	}
-	public void hitNPS(){
-		
+
+	public void crashPS() {
+
 	}
-	public void collideAstroid(){
-		
+
+	public void hitNPS() {
+
 	}
-	public void colliseAstroidNPS(){
-		
+
+	public void collideAstroid() {
+
 	}
-	public void tick(){
-		
+
+	public void colliseAstroidNPS() {
+
 	}
-	public void print(){
-		
+
+	public void tick() {
+
 	}
-	public void map(){
-		
+
+	public void print() {
+
 	}
-	public void quit(){
-		
+
+	public void map() {
+
+	}
+
+	public void quit() {
+
 	}
 }
-
-
