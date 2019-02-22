@@ -1,21 +1,24 @@
 package com.mycompany.a1;
+import java.util.Vector;
 import com.mycompany.GameObjects.*;
-import com.mycompany.Objects.Asteroid;
+import com.mycompany.Objects.*;
 
 public class GameWorld {
-	Random random = new Random();
-	
-	public 
+	private int lives;
+	private int tick;
+	private Vector<GameObject> Objects;
 	
 	public void init() {
-		//Code here to create the initial game objects/setup
+		tick = 0;
+		lives = 3;
+		Objects = new Vector<GameObject>();
 	}
 	//additional methods here to manipulate world objects and related game state data
 	public void addNewAstroid() {
 		Asteroid asteroid = New Asteroid();
 		store.add(asteroid);
 		System.out.println("A new Asteroid has been created.");
-	}
+		}
 	public void nonPlayerShip() {
 		
 	}

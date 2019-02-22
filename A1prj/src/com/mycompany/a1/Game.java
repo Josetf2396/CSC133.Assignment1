@@ -11,8 +11,8 @@ public class Game {
 	private GameWorld gw;
 
 	public Game() {
-		gw = new GameWorld;
-		gw.init();
+		gw = new GameWorld();
+		this.gw.init();
 		play();
 	}
 
@@ -22,6 +22,7 @@ public class Game {
 		final TextField myTextField = new TextField();
 		this.addComponent(myTextField);
 		this.show();
+		
 		myTextField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				String sCommand = myTextField.getText().toString();
