@@ -24,6 +24,19 @@ public class GameWorld {
 	}
 
 	public void nonPlayerShip() {
+		Player nonplayership = Player.getShip();
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if ((!gObjects.contains(nonplayership))) {
+					gObjects.add(nonplayership);
+					break;
+				} else {
+					System.out.println("Ship Already exits");
+					nonplayership.toString();
+					break;
+				}
+			}
+		}
 
 	}
 
@@ -52,7 +65,7 @@ public class GameWorld {
 
 	}
 
-	public void deacreaseSpeed() {
+	public void decreaseSpeed() {
 
 	}
 
