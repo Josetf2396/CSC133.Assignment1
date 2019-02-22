@@ -10,7 +10,7 @@ public abstract class MoveableGameObject extends GameObject implements IMoveable
 	/**
 	 * @Constuctor
 	 */
-	public MoveableObject(){
+	public MoveableObject{
 		
 	}
 	/**
