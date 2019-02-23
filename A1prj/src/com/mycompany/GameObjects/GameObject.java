@@ -1,7 +1,6 @@
 package com.mycompany.GameObjects;
 
 
-import com.codename1.charts.models.*;
 import com.codename1.charts.util.ColorUtil;
 
 public abstract class GameObject{
@@ -39,12 +38,6 @@ public abstract class GameObject{
 		colorutil.rgb(inr, ing, inb);
 
 	}
-	
-	public String toString() {
-		return "Location = ("this.x +","+this.y+")"
-			   " Color = ("+this.r+","+this.g+","+this.b+")";
-	}
-	
 	
 	
 	
