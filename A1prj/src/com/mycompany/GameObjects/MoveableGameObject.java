@@ -7,12 +7,7 @@ public abstract class MoveableGameObject extends GameObject implements IMoveable
 	
 	private int speed;
 	private int direction;
-	/**
-	 * @Constuctor
-	 */
-	public MoveableObject{
-		
-	}
+
 	/**
 	 * @return the speed
 	 */

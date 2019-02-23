@@ -2,20 +2,14 @@ package com.mycompany.GameObjects;
 
 public class FixGameObject extends GameObject{
 
-	private static int uniqueid;
+	private int uniqueID;
 
-	/**
-	 * @return the uniqueID
-	 */
-	public static int getUniqueID() {
-		return this.uniqueid;
+	public  int getUniqueID() {
+		return this.uniqueID;
 	}
 
-	/**
-	 * @param uniqueID the uniqueID to set
-	 */
-	public static void setUniqueID(int uniqueID) {
-		this.uniqueID = uniqueid;
+	public  void setUniqueID(int uniqueID, int uniqueid) {
+		this.uniqueID= uniqueid;
 	}
 	
 }
