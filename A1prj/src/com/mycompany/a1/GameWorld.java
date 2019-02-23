@@ -7,12 +7,11 @@ import com.mycompany.Objects.*;
 public class GameWorld {
 	private int lives;
 	private int tick;
-	private Vector <GameObject> gObjects;
+	private Vector<GameObject> gObjects= new Vector<GameObject>();
 
 	public void init() {
 		tick = 0;
 		lives = 3;
-		//gObjects = new Vector<GameObject>();
 	}
 
 	// additional methods here to manipulate world objects and related game
