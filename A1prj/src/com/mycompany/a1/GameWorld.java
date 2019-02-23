@@ -216,6 +216,7 @@ public class GameWorld {
 	}
 
 	public void quit() {
+		System.exit(0);
 
 	}
 }
