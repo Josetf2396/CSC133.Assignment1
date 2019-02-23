@@ -10,7 +10,7 @@ public class Asteroid extends MoveableGameObject {
 	
 	public Asteroid(){
 		this.size = rSize();
-		super.setColor(255,255,255);
+		//super.setColor(255,255,255);
 		super.setX(rDirection());
 		super.setY(rDirection());
 		super.setDirection(rDirection());

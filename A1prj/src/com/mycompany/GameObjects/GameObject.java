@@ -1,17 +1,17 @@
 package com.mycompany.GameObjects;
 
 
-import com.codename1.charts.util.ColorUtil;
+//import com.codename1.charts.util.ColorUtil;
 
 public abstract class GameObject{
 	
 	private float x;
 	private float y;
 	static int color;
-	private static int r;
-	private static int g;
-	private static int b;
-	ColorUtil colorutil = new ColorUtil();
+	//private static int r;
+	//private static int g;
+	//private static int b;
+	//ColorUtil colorutil = new ColorUtil();
 	
 	public float getX() {
 		return this.x;
@@ -26,7 +26,7 @@ public abstract class GameObject{
 	public void setY(float Y) {
 		this.y = Y;
 	}
-	
+	/*
 	public int getColor() {
 		return this.getColor();
 	}
@@ -39,7 +39,7 @@ public abstract class GameObject{
 
 	}
 	
-	
+	*/
 	
 	
 }
