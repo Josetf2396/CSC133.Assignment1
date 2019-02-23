@@ -15,7 +15,8 @@ public class GameWorld {
 		gObjects = new Vector<GameObject>();
 	}
 
-	// additional methods here to manipulate world objects and related game state
+	// additional methods here to manipulate world objects and related game
+	// state
 	// data
 	public void addNewAstroid() {
 		Asteroid asteroid = new Asteroid();
@@ -29,6 +30,7 @@ public class GameWorld {
 			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
 				if ((!gObjects.contains(nonplayership))) {
 					gObjects.add(nonplayership);
+					System.out.println("The NonPlayer has been added");
 					break;
 				} else {
 					System.out.println("Ship Already exits");
@@ -50,6 +52,7 @@ public class GameWorld {
 			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
 				if ((!gObjects.contains(playership))) {
 					gObjects.add(playership);
+					System.out.println("The Player has been added");
 					break;
 				} else {
 					System.out.println("Ship Already exits");
@@ -62,19 +65,56 @@ public class GameWorld {
 	}
 
 	public void increaseSpeed() {
-
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof Player) {
+					Player shpObj = (Player) gObjects.elementAt(i);
+					shpObj.incSpeed();
+					System.out.println(
+							"Player speed increased: " + shpObj.toString());
+				}
+			}
+		}
 	}
 
 	public void decreaseSpeed() {
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof Player) {
+					Player shpObj = (Player) gObjects.elementAt(i);
+					shpObj.decSpeed();
+					System.out.println(
+							"Player speed increased: " + shpObj.toString());
+				}
+			}
+		}
 
 	}
 
 	public void turnLeft() {
-
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof ShipObject) {
+					Player shpObj = (Player) gObjects.elementAt(i);
+					shpObj.turnLeft(5);
+					System.out
+							.println("Ship Turned Left: " + shpObj.toString());
+				}
+			}
+		}
 	}
 
 	public void turnRight() {
-
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof ShipObject) {
+					Player shpObj = (Player) gObjects.elementAt(i);
+					shpObj.turnRight(5);
+					System.out
+							.println("Ship Turned Left: " + shpObj.toString());
+				}
+			}
+		}
 	}
 
 	public void turnMissleLauncher() {
@@ -82,7 +122,24 @@ public class GameWorld {
 	}
 
 	public void fire() {
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof ShipObject) {
+					Player shpObj = (Player) gObjects.elementAt(i);
+					shpObj.incSpeed();
+					if (shpObj.getMissiles() > 0)
+						System.out.println("Fire");
+					gObjects.add(new Missile(shpObj.getDirection(),
+							shpObj.getSpeed(), shpObj.getX(), shpObj.getY()));
+					shpObj.fire();
 
+					if (shpObj.getMissiles() == 0) // accidently removes ship
+						System.out
+								.println("0 Missles, Head Back to the Station");
+				}
+			}
+
+		}
 	}
 
 	public void launchNPSMissle() {
@@ -90,11 +147,32 @@ public class GameWorld {
 	}
 
 	public void jump() {
-
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof ShipObject) {
+					if (gObjects.elementAt(i) instanceof Player) {
+						Player shpObj = (Player) gObjects.elementAt(i);
+						shpObj.setX(512);
+						shpObj.setY(384);
+						System.out
+								.println("HypeSpace Jump" + shpObj.toString());
+					}
+				}
+			}
+		}
 	}
 
 	public void reloadMissle() {
-
+		for (int i = 0; i < gObjects.size(); i++)
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof ShipObject) {
+					if (gObjects.elementAt(i) instanceof Player) {
+						Player shpObj = (Player) gObjects.elementAt(i);
+						shpObj.reload();
+						System.out.println("Missles Reloaded: " + shpObj.toString());
+					}
+				}
+			}
 	}
 
 	public void eliminateAstroid() {

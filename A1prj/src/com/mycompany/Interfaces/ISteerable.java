@@ -2,6 +2,6 @@ package com.mycompany.Interfaces;
 
 public interface ISteerable {
 
-	void turnLeft();
-	void turnRight();
+	void turnLeft(int degrees);
+	void turnRight(int degrees);
 }

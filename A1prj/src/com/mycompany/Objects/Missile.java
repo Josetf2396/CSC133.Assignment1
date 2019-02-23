@@ -2,11 +2,11 @@ package com.mycompany.Objects;
 
 import com.mycompany.GameObjects.MoveableGameObject;
 
-public class Missle extends MoveableGameObject {
+public class Missile extends MoveableGameObject {
 
 	private int fuel;
 	
-	public Missle(int speed, int direction, float x, float y) {
+	public Missile(int speed, int direction, float x, float y) {
 		this.fuel = 10;
 		super.setSpeed(speed + 10);
 		super.setDirection(direction);
