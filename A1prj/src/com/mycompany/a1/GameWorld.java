@@ -19,8 +19,8 @@ public class GameWorld {
 	// state
 	// data
 	public void addNewAstroid() {
-		Asteroid asteroid = new Asteroid();
-		gObjects.add(asteroid);
+		Asteroid Rock = new Asteroid();
+		gObjects.add(Rock);
 		System.out.println("A new Asteroid has been created.");
 	}
 

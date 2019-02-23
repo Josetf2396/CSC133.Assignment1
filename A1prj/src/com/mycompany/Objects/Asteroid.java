@@ -54,7 +54,7 @@ public class Asteroid extends MoveableGameObject {
 		 super.move();
 	}
 	
-
+/*
 	public String toString(){
 		return (
 			"Astroid : loc="+super.getX() + "," + super.getY() +
@@ -64,6 +64,7 @@ public class Asteroid extends MoveableGameObject {
 			" Size="   + this.getSize()
 				);
 	}
+	*/
 }
 
 
