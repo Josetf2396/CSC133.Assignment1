@@ -70,16 +70,16 @@ public class Game extends Form {
 						gw.reloadMissle();
 						break;
 					case 'k' :
-						gw.eliminateAstroid();
+						gw.eliminateAstroidByPS();
 						break;
 					case 'e' :
-						gw.eliminateNPS();
+						gw.eliminateNPSByPS();
 						break;
 					case 'E' :
-						gw.explodePS();
+						gw.NPSexplodesPS();
 						break;
 					case 'c' :
-						gw.crashPS();
+						gw.crashPSintoAstroid();
 						break;
 					case 'h' :
 						gw.hitNPS();

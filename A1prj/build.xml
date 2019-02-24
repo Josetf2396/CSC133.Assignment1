@@ -14,6 +14,8 @@
     <taskdef name="verifyDir" classname="com.codename1.build.client.VerifyDir" classpath="CodeNameOneBuildClient.jar"/>
     <taskdef name="generateGuiSources" classname="com.codename1.build.client.GenerateGuiSources" classpath="CodeNameOneBuildClient.jar"/>
     
+	
+	
 	<path id="master-classpath">
 	  <fileset dir="lib">
 	    <include name="*.jar"/>

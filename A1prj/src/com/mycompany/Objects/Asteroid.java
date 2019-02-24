@@ -54,17 +54,16 @@ public class Asteroid extends MoveableGameObject {
 		 super.move();
 	}
 	
-/*
+
 	public String toString(){
 		return (
-			"Astroid : loc="+super.getX() + "," + super.getY() +
-			" Color="  + super.getColor()+
+			"Asteroid : location="+super.getX() + "," + super.getY()+
 			" Speed="  + super.getSpeed() +
 			" dir="    + super.getDirection()+
 			" Size="   + this.getSize()
 				);
 	}
-	*/
+	
 }
 
 
