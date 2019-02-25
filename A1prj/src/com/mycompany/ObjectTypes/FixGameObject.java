@@ -1,4 +1,4 @@
-package com.mycompany.GameObjects;
+package com.mycompany.ObjectTypes;
 
 public class FixGameObject extends GameObject{
 

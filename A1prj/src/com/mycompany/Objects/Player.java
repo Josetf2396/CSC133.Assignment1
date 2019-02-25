@@ -2,7 +2,7 @@ package com.mycompany.Objects;
 //Note: Both classes, PlayerShip and MissileLauncher 
 //are required to have a composition relation.
 
-import com.mycompany.GameObjects.*;
+import com.mycompany.ObjectTypes.*;
 
 
 public class Player extends ShipObject {

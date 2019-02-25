@@ -1,6 +1,6 @@
 package com.mycompany.Objects;
 
-import com.mycompany.GameObjects.FixGameObject;
+import com.mycompany.ObjectTypes.FixGameObject;
 
 public class SpaceStation extends FixGameObject{
 	

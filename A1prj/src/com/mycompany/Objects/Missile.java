@@ -1,6 +1,6 @@
 package com.mycompany.Objects;
 
-import com.mycompany.GameObjects.MoveableGameObject;
+import com.mycompany.ObjectTypes.MoveableGameObject;
 
 public class Missile extends MoveableGameObject {
 

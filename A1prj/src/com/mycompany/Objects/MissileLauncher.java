@@ -1,6 +1,6 @@
 package com.mycompany.Objects;
 
-import com.mycompany.GameObjects.SteerableGameObject;
+import com.mycompany.ObjectTypes.SteerableGameObject;
 
 
 public class MissileLauncher extends SteerableGameObject {

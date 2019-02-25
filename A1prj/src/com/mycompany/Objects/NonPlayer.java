@@ -1,6 +1,6 @@
 package com.mycompany.Objects;
 
-import com.mycompany.GameObjects.*;
+import com.mycompany.ObjectTypes.*;
 
 public class NonPlayer extends SteerableGameObject{
 

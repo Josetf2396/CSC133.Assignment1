@@ -2,7 +2,7 @@ package com.mycompany.Objects;
 
 import java.util.Random;
 
-import com.mycompany.GameObjects.*;
+import com.mycompany.ObjectTypes.*;
 
 public class Asteroid extends MoveableGameObject {
 	

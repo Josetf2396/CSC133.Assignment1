@@ -1,4 +1,4 @@
-package com.mycompany.GameObjects;
+package com.mycompany.ObjectTypes;
 
 import com.mycompany.Interfaces.ISteerable;
 
