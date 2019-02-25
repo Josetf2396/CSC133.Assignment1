@@ -1,7 +1,7 @@
 package com.mycompany.a1;
 
 import java.util.Vector;
-import com.mycompany.GameObjects.*;
+import com.mycompany.ObjectTypes.*;
 import com.mycompany.Objects.*;
 import com.mycompany.Objects.Asteroid;
 
