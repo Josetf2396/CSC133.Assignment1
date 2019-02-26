@@ -207,16 +207,14 @@ public class GameWorld {
 
 	public void NPSexplodesPS() {
 		for (int i = 0; i < gObjects.size(); i++) {
+			Player playership = Player.getShip();
 			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
-				if (gObjects.elementAt(i) instanceof NonPlayer) {
-					gObjects.removeElementAt(i);
-				}
-				
 				if (gObjects.elementAt(i) instanceof Missile) {
 					gObjects.removeElementAt(i);
 				}
 
-				if (gObjects.elementAt(i) instanceof NonPlayer) {
+				if (gObjects.elementAt(i) instanceof Player) {
+					playership.decrementLives();
 					gObjects.removeElementAt(i);
 				}
 			}
@@ -233,8 +231,20 @@ public class GameWorld {
 		}
 	}
 
-	public void hitNPS() {
+	public void PScollideNPS() {
+		for (int i = 0; i < gObjects.size(); i++) {
+			Player playership = Player.getShip();
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof NonPlayer) {
+					gObjects.removeElementAt(i);
+				}
 
+				if (gObjects.elementAt(i) instanceof Player) {
+					playership.decrementLives();
+					gObjects.removeElementAt(i);
+				}
+			}
+		}
 	}
 
 	public void collideAstroid() {
@@ -246,7 +256,7 @@ public class GameWorld {
 		}
 	}
 
-	public void colliseAstroidNPS() {
+	public void collideAstroidNPS() {
 
 	}
 

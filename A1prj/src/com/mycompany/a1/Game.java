@@ -82,13 +82,13 @@ public class Game extends Form {
 						gw.crashPSintoAstroid();
 						break;
 					case 'h' :
-						gw.hitNPS();
+						gw.PScollideNPS();
 						break;
 					case 'x' :
 						gw.collideAstroid();
 						break;
 					case 'I' :
-						gw.colliseAstroidNPS();
+						gw.collideAstroidNPS();
 						break;
 					case 't' :
 						gw.tick();
