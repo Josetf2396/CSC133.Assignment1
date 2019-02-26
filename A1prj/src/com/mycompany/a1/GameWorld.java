@@ -257,7 +257,17 @@ public class GameWorld {
 	}
 
 	public void collideAstroidNPS() {
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof NonPlayer) {
+					gObjects.removeElementAt(i);
+				}
 
+				if (gObjects.elementAt(i) instanceof Asteroid) {
+					gObjects.removeElementAt(i);
+				}
+			}
+		}
 	}
 
 	public void tick() {
