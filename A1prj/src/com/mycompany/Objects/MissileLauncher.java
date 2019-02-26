@@ -11,6 +11,10 @@ public class MissileLauncher extends SteerableGameObject {
 		super.setX(x);
 		super.setY(y);
 	}
+	public void fire(){
+		
+	}
+
 	
 
 }

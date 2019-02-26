@@ -13,8 +13,4 @@ public class SteerableGameObject extends MoveableGameObject implements ISteerabl
 		
 	}
 	
-	public void fire(){
-		
-	}
-
 }
