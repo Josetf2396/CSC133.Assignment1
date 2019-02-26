@@ -14,9 +14,6 @@ public class GameWorld {
 		tick = 0;
 	}
 
-	// additional methods here to manipulate world objects and related game
-	// state
-	// data
 	public void addNewAstroid() {
 		Asteroid rock = new Asteroid();
 		gObjects.add(rock);
@@ -192,14 +189,38 @@ public class GameWorld {
 				}
 			}
 		}
-
 	}
 
 	public void eliminateNPSByPS() {
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof Missile) {
+					gObjects.removeElementAt(i);
+				}
 
+				if (gObjects.elementAt(i) instanceof NonPlayer) {
+					gObjects.removeElementAt(i);
+				}
+			}
+		}
 	}
 
 	public void NPSexplodesPS() {
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof NonPlayer) {
+					gObjects.removeElementAt(i);
+				}
+				
+				if (gObjects.elementAt(i) instanceof Missile) {
+					gObjects.removeElementAt(i);
+				}
+
+				if (gObjects.elementAt(i) instanceof NonPlayer) {
+					gObjects.removeElementAt(i);
+				}
+			}
+		}
 
 	}
 
