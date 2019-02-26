@@ -41,5 +41,9 @@ public abstract class GameObject{
 	
 	*/
 	
+	public String toString() {
+		return "Location=" + this.x + "," + this.y;
+	}
+	
 	
 }

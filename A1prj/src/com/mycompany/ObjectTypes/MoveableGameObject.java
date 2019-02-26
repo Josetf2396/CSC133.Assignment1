@@ -49,7 +49,7 @@ public abstract class MoveableGameObject extends GameObject implements IMoveable
 	}
 	
 	public String toString(){
-		return super.toString() + "Speed= " + this.speed + 
+		return super.toString() + " Speed= " + this.speed + 
 								" Direction=  " + this.direction;
 	}
 	

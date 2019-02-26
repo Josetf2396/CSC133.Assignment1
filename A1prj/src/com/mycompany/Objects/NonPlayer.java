@@ -1,5 +1,7 @@
 package com.mycompany.Objects;
 
+import java.util.Random;
+
 import com.mycompany.ObjectTypes.*;
 
 public class NonPlayer extends SteerableGameObject{
@@ -9,9 +11,9 @@ public class NonPlayer extends SteerableGameObject{
 	private static NonPlayer shipX;
 	
 	public NonPlayer() {
-		super.setX(512);
-		super.setY(384);
-		super.setDirection(0);
+		super.setX(randNum());
+		super.setY(randNum());
+		super.setDirection(randNum());
 		//super.setColor(0, 300, 10);
 	}
 	
@@ -31,4 +33,16 @@ public class NonPlayer extends SteerableGameObject{
 		return this.missilecount;
 	}
 	
+	public int randNum() {
+		int max = 359;
+		int min = 0;
+		Random randomNum = new Random();
+		int randomNumber = min + randomNum.nextInt(max);
+		return randomNumber;
+	}
+	
+	public String toString() {
+		return "Ship: " + super.toString() + " MissileCount=" + this.missilecount;
+
+	}
 }

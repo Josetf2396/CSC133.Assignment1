@@ -1,7 +1,6 @@
 package com.mycompany.Objects;
 
 import java.util.Random;
-
 import com.mycompany.ObjectTypes.*;
 
 public class Asteroid extends MoveableGameObject {
@@ -58,9 +57,9 @@ public class Asteroid extends MoveableGameObject {
 	public String toString(){
 		return (
 			"Asteroid : location="+super.getX() + "," + super.getY()+
-			" Speed="  + super.getSpeed() +
-			" dir="    + super.getDirection()+
-			" Size="   + this.getSize()
+			" Speed ="+ super.getSpeed() +
+			" Direction ="+ super.getDirection()+
+			" Size ="+ this.getSize()
 				);
 	}
 	

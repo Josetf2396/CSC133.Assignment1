@@ -2,14 +2,16 @@ package com.mycompany.ObjectTypes;
 
 public class FixGameObject extends GameObject{
 
-	private int uniqueID;
+	private int uniqueid;
 
-	public  int getUniqueID() {
-		return this.uniqueID;
+	
+	public void setUniqueID(int inID){
+		this.uniqueid = inID;
 	}
 
-	public  void setUniqueID(int uniqueID, int uniqueid) {
-		this.uniqueID= uniqueid;
+	public int getUniqueid() {
+		return this.uniqueid;
+				
 	}
 	
 }

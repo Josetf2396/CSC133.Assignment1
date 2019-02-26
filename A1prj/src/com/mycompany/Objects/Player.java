@@ -43,5 +43,10 @@ public class Player extends ShipObject {
 		this.lives = this.lives-1;
 	}
 	
+	public String toString() {
+		return "Ship: " + super.toString() + " MissileCount=" + this.missilecount;
+
+	}
+	
 	
 }
