@@ -9,14 +9,13 @@ import com.mycompany.ObjectTypes.*;
 public class Player extends MoveableGameObject implements ISteerable {
 	private int lives = 3;
 	private static Player shipX;
-	private static SteerableMissileLauncher weapon;
+
 
 	
 	private Player() {
 		super.setX(512);
 		super.setY(384);
 		super.setDirection(0);
-		weapon = new SteerableMissileLauncher(super.getX(), super.getY());
 	}
 	
 	

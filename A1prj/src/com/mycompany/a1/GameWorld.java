@@ -41,8 +41,10 @@ public class GameWorld {
 
 	public void playerShip() {
 		Player playership = Player.getShip();
+		SteerableMissileLauncher weapon = SteerableMissileLauncher.getWeapon();
 		if ((!gObjects.contains(playership))) {
 			gObjects.add(playership);
+			gObjects.add(weapon);
 			System.out.println("Your Ship has been added " + playership.toString());
 		} else {
 			System.out.println("Ship Already exist");
@@ -94,6 +96,15 @@ public class GameWorld {
 	}
 
 	public void turnMissleLauncher() {
+		SteerableMissileLauncher weapon = SteerableMissileLauncher.getWeapon();
+		Player playership = Player.getShip();
+		if ((gObjects.contains(playership))) {
+			weapon.turnLeft();
+			System.out.println("Turned MissileLauncher: " + weapon.toString());
+		} else {
+			System.out.println("Ship doesn't exist please add player ship first");
+
+		}
 
 	}
 
@@ -101,32 +112,35 @@ public class GameWorld {
 	// direction
 	// of the missle launcher to fire
 	public void fire() {
-		/*
-		 * for (int i = 0; i < gObjects.size(); i++) { if (gObjects.elementAt(i)
-		 * instanceof MoveableGameObject) { if (gObjects.elementAt(i) instanceof
-		 * ShipObject) { Player playership = (Player) gObjects.elementAt(i);
-		 * playership.incSpeed(); if (playership.getMissiles() > 0)
-		 * System.out.println("Fire"); gObjects.add(new
-		 * Missile(playership.getDirection(), playership.getSpeed(), playership.getX(),
-		 * playership.getY())); playership.fire();
-		 * 
-		 * if (playership.getMissiles() == 0) // accidently removes ship
-		 * System.out.println("0 Missles, Head Back to the Station"); } }
-		 * 
-		 * } Player playership = Player.getShip(); if ((gObjects.contains(playership)))
-		 * { if (playership.getMissiles() > 0) { System.out.println("Fire"); }
-		 * gObjects.add(new Missile(playership.getDirection(), playership.getSpeed(),
-		 * playership.getX(), playership.getY())); playership.fire(); if
-		 * (playership.getMissiles() == 0) {
-		 * System.out.println("0 Missles, Head Back to the Station"); } } else {
-		 * System.out.println("Ship doesn't exist please add player ship first" );
-		 * 
-		 * }
-		 */
+
+		Player playership = Player.getShip();
+		SteerableMissileLauncher weapon = SteerableMissileLauncher.getWeapon();
+		if ((gObjects.contains(playership))) {
+			if (weapon.getMissiles() > 0) {
+				System.out.println("Fire");
+			}
+			gObjects.add(new Missile(weapon.getDirection(), weapon.getSpeed(), weapon.getX(), weapon.getY()));
+			weapon.fire();
+			if (weapon.getMissiles() == 0) {
+				System.out.println("0 Missles, Head Back to the Station");
+			}
+		} else {
+			System.out.println("Ship doesn't exist please add player ship first");
+
+		}
+
 	}
 
 	public void launchNPSMissle() {
-
+		for (int i = 0; i < gObjects.size(); i++) {
+			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+				if (gObjects.elementAt(i) instanceof NonPlayer) {
+					MoveableGameObject currNPS = (MoveableGameObject) gObjects.elementAt(i);
+					gObjects.add(
+							new Missile(currNPS.getDirection(), currNPS.getSpeed(), currNPS.getX(), currNPS.getY()));
+				}
+			}
+		}
 	}
 
 	public void jump() {
@@ -142,10 +156,12 @@ public class GameWorld {
 	}
 
 	public void reloadMissle() {
-		SteerableMissileLauncher weapon = weapon.getWeapon();
+		SteerableMissileLauncher weapon = SteerableMissileLauncher.getWeapon();
+		Player playership = Player.getShip();
+
 		if ((gObjects.contains(weapon))) {
 			System.out.println("Reloaded Weapons: " + playership.toString());
-			playership.reload();
+			weapon.reload();
 		} else {
 			System.out.println("Ship doesn't exist please add player ship first");
 
@@ -194,6 +210,7 @@ public class GameWorld {
 				}
 			}
 		}
+		
 
 	}
 
