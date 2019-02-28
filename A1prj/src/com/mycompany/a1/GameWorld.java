@@ -55,8 +55,6 @@ public class GameWorld {
 		Player playership = Player.getShip();
 		if ((!gObjects.contains(playership))) {
 			gObjects.add(playership);
-			gObjects.add(new MissileLauncher(playership.getDirection(),
-					playership.getX(), playership.getY()));
 			System.out.println(
 					"Your Ship has been added " + playership.toString());
 		} else {

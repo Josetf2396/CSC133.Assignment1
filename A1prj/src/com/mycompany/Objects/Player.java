@@ -9,12 +9,14 @@ public class Player extends ShipObject {
 	private int missilecount = 10;
 	private int lives = 3;
 	private static Player shipX;
+	private static MissileLauncher weapon;
+
 	
 	private Player() {
 		super.setX(512);
 		super.setY(384);
 		super.setDirection(0);
-		//super.setColor(0, 300, 10);
+		weapon = new MissileLauncher(super.getX(), super.getY());
 	}
 	
 	
