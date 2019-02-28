@@ -6,7 +6,7 @@ import com.mycompany.Interfaces.ISteerable;
 import com.mycompany.ObjectTypes.*;
 
 
-public class Player extends ShipObject implements ISteerable {
+public class Player extends MoveableGameObject implements ISteerable {
 	private int lives = 3;
 	private static Player shipX;
 	private static SteerableMissileLauncher weapon;
@@ -54,23 +54,22 @@ public class Player extends ShipObject implements ISteerable {
 	}
 	
 	public String toString() {
-		return "Ship: " + super.toString();
+		return " Ship: " + super.toString();
 
 	}
 
-
-	@Override
-	public void turnLeft(int degrees) {
-		// TODO Auto-generated method stub
+	public void turnLeft() {
+		int currDirection = super.getDirection() + 90;
+		super.setDirection(currDirection);
 		
 	}
 
 
-	@Override
-	public void turnRight(int degrees) {
-		// TODO Auto-generated method stub
-		
+	public void turnRight() {
+		int currDirection = super.getDirection() - 90;
+		super.setDirection(currDirection);
 	}
-	
+
+
 	
 }

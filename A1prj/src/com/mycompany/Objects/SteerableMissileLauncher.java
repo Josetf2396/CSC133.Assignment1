@@ -21,16 +21,17 @@ public class SteerableMissileLauncher extends MissileLauncher implements ISteera
 	}
 
 	@Override
-	public void turnLeft(int degrees) {
+	public void turnLeft() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void turnRight(int degrees) {
+	public void turnRight() {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	
 

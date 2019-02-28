@@ -1,6 +1,6 @@
 package com.mycompany.ObjectTypes;
 
-public class FixGameObject extends GameObject{
+public abstract class FixGameObject extends GameObject{
 
 	private int uniqueid;
 

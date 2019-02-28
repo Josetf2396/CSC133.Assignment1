@@ -74,7 +74,7 @@ public class GameWorld {
 	public void turnLeft() {
 		Player playership = Player.getShip();
 		if ((gObjects.contains(playership))) {
-			playership.turnLeft(5);
+			playership.turnLeft();
 			System.out.println("Player turned left: " + playership.toString());
 		} else {
 			System.out.println("Ship doesn't exist please add player ship first");
@@ -85,7 +85,7 @@ public class GameWorld {
 	public void turnRight() {
 		Player playership = Player.getShip();
 		if ((gObjects.contains(playership))) {
-			playership.turnRight(5);
+			playership.turnRight();
 			System.out.println("Player turned right: " + playership.toString());
 		} else {
 			System.out.println("Ship doesn't exist please add player ship first");
@@ -142,8 +142,8 @@ public class GameWorld {
 	}
 
 	public void reloadMissle() {
-		Player playership = Player.getShip();
-		if ((gObjects.contains(playership))) {
+		SteerableMissileLauncher weapon = weapon.getWeapon();
+		if ((gObjects.contains(weapon))) {
 			System.out.println("Reloaded Weapons: " + playership.toString());
 			playership.reload();
 		} else {

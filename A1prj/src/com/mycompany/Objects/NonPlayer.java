@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.mycompany.ObjectTypes.*;
 
-public class NonPlayer extends ShipObject{
+public class NonPlayer extends MoveableGameObject{
 
 
 	private int missilecount = 10;
@@ -24,14 +24,11 @@ public class NonPlayer extends ShipObject{
 		}
 		return shipX;
 	}
-	
-	public void setMissiles(int inMissiles) {
-		this.missilecount += inMissiles;
-	}
 
 	public int getMissiles() {
 		return this.missilecount;
 	}
+	
 	
 	public int randNum() {
 		int max = 359;
@@ -42,7 +39,7 @@ public class NonPlayer extends ShipObject{
 	}
 	
 	public String toString() {
-		return "Ship: " + super.toString() + " MissileCount=" + this.missilecount;
+		return " Ship: " + super.toString() + " MissileCount=" + this.missilecount;
 
 	}
 }
