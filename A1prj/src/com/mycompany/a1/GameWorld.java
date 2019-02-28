@@ -169,44 +169,57 @@ public class GameWorld {
 	}
 
 	public void eliminateAstroidByPS() {
+		boolean removedMissile = false;
+		boolean removedAsteroid = false;
 		for (int i = 0; i < gObjects.size(); i++) {
-			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+			if (!removedMissile && gObjects.elementAt(i) instanceof MoveableGameObject) {
 				if (gObjects.elementAt(i) instanceof Missile) {
 					gObjects.removeElementAt(i);
+					removedMissile=true;
 				}
 
-				if (gObjects.elementAt(i) instanceof Asteroid) {
+				if (!removedAsteroid && gObjects.elementAt(i) instanceof Asteroid) {
 					gObjects.removeElementAt(i);
+					removedAsteroid = true;
 				}
 			}
 		}
 	}
 
 	public void eliminateNPSByPS() {
+		boolean removedMissile = false;
+		boolean removedNPS = false;
 		for (int i = 0; i < gObjects.size(); i++) {
 			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
-				if (gObjects.elementAt(i) instanceof Missile) {
+				if (!removedMissile && gObjects.elementAt(i) instanceof Missile) {
 					gObjects.removeElementAt(i);
+					removedMissile = true;
 				}
-
-				if (gObjects.elementAt(i) instanceof NonPlayer) {
+				
+				if (!removedNPS && gObjects.elementAt(i) instanceof NonPlayer) {
 					gObjects.removeElementAt(i);
+					removedNPS =  true;
 				}
 			}
 		}
 	}
 
 	public void NPSexplodesPS() {
+		boolean removedMissile = false;
+		boolean removedPS = false;
 		for (int i = 0; i < gObjects.size(); i++) {
 			Player playership = Player.getShip();
-			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
+			if (!removedMissile && gObjects.elementAt(i) instanceof MoveableGameObject) {
 				if (gObjects.elementAt(i) instanceof Missile) {
 					gObjects.removeElementAt(i);
+					removedMissile = true;
 				}
 
-				if (gObjects.elementAt(i) instanceof Player) {
+				if (!removedPS && gObjects.elementAt(i) instanceof Player) {
 					playership.decrementLives();
 					gObjects.removeElementAt(i);
+					removedPS=true;
+					
 				}
 			}
 		}
@@ -224,16 +237,20 @@ public class GameWorld {
 	}
 
 	public void PScollideNPS() {
+		boolean removedPS = false;
+		boolean removedNPS = false;
 		for (int i = 0; i < gObjects.size(); i++) {
 			Player playership = Player.getShip();
 			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
-				if (gObjects.elementAt(i) instanceof NonPlayer) {
+				if (!removedNPS && gObjects.elementAt(i) instanceof NonPlayer) {
 					gObjects.removeElementAt(i);
+					removedNPS = true;
 				}
 
-				if (gObjects.elementAt(i) instanceof Player) {
+				if (!removedPS && gObjects.elementAt(i) instanceof Player) {
 					playership.decrementLives();
 					gObjects.removeElementAt(i);
+					removedPS=true;
 				}
 			}
 		}
@@ -249,14 +266,18 @@ public class GameWorld {
 	}
 
 	public void collideAstroidNPS() {
+		boolean removedAsteroid = false;
+		boolean removedNPS = false;
 		for (int i = 0; i < gObjects.size(); i++) {
 			if (gObjects.elementAt(i) instanceof MoveableGameObject) {
-				if (gObjects.elementAt(i) instanceof NonPlayer) {
+				if (!removedNPS && gObjects.elementAt(i) instanceof NonPlayer) {
 					gObjects.removeElementAt(i);
+					removedNPS = true;
 				}
 
-				if (gObjects.elementAt(i) instanceof Asteroid) {
+				if (!removedAsteroid && gObjects.elementAt(i) instanceof Asteroid) {
 					gObjects.removeElementAt(i);
+					removedAsteroid = true;
 				}
 			}
 		}
