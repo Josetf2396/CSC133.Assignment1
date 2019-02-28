@@ -2,21 +2,21 @@ package com.mycompany.Objects;
 //Note: Both classes, PlayerShip and MissileLauncher 
 //are required to have a composition relation.
 
+import com.mycompany.Interfaces.ISteerable;
 import com.mycompany.ObjectTypes.*;
 
 
-public class Player extends ShipObject {
-	private int missilecount = 10;
+public class Player extends ShipObject implements ISteerable {
 	private int lives = 3;
 	private static Player shipX;
-	private static MissileLauncher weapon;
+	private static SteerableMissileLauncher weapon;
 
 	
 	private Player() {
 		super.setX(512);
 		super.setY(384);
 		super.setDirection(0);
-		weapon = new MissileLauncher(super.getX(), super.getY());
+		weapon = new SteerableMissileLauncher(super.getX(), super.getY());
 	}
 	
 	
@@ -27,15 +27,6 @@ public class Player extends ShipObject {
 		return shipX;
 	}
 	
-	public void setMissiles(int inMissiles) {
-		this.missilecount += inMissiles;
-	}
-
-	public int getMissiles() {
-		return this.missilecount;
-	}
-
-
 	public int getLives() {
 		return lives;
 	}
@@ -45,9 +36,40 @@ public class Player extends ShipObject {
 		this.lives = this.lives-1;
 	}
 	
-	public String toString() {
-		return "Ship: " + super.toString() + " MissileCount=" + this.missilecount;
+	public void incSpeed() {
+		int currentSpeed = super.getSpeed() + 5;
+		super.setSpeed(currentSpeed);
+	}
 
+	public void decSpeed() {
+		if (super.getSpeed() <= 0) {
+			super.setSpeed(0);
+		}
+		int currentSpeed = super.getSpeed() - 5;
+		super.setSpeed(currentSpeed);
+	}
+	
+	public void move() {
+		super.move();
+	}
+	
+	public String toString() {
+		return "Ship: " + super.toString();
+
+	}
+
+
+	@Override
+	public void turnLeft(int degrees) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void turnRight(int degrees) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

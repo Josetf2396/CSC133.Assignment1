@@ -17,37 +17,25 @@ public class GameWorld {
 	public void addNewAstroid() {
 		Asteroid rock = new Asteroid();
 		gObjects.add(rock);
-		System.out
-				.println("A new Asteroid has been created " + rock.toString());
+		System.out.println("A new Asteroid has been created " + rock.toString());
 
 	}
 
 	public void nonPlayerShip() {
 		NonPlayer nps = new NonPlayer();
 		gObjects.add(nps);
-		gObjects.add(new MissileLauncher(nps.getDirection(), nps.getX(),
-				nps.getY()));
 		System.out.println("The NonPlayer has been added" + nps.toString());
 	}
 
 	public void blinkingStation() {
 		SpaceStation station = SpaceStation.getSpaceStation();
 		station.setBlinkrate(2);
-		gObjects.add(station);
-
-		for (int i = 0; i < gObjects.size(); i++) {
-			if (gObjects.elementAt(i) instanceof FixGameObject) {
-				if ((!gObjects.contains(station))) {
-					gObjects.add(station);
-					System.out.println("Space Station has been added :"
-							+ station.toString());
-					break;
-				} else {
-					System.out.println("space station exists");
-					station.toString();
-					break;
-				}
-			}
+		if ((!gObjects.contains(station))) {
+			gObjects.add(station);
+			System.out.println("Space Station has been added :" + station.toString());
+		} else {
+			System.out.println("space station exists");
+			station.toString();
 		}
 	}
 
@@ -55,8 +43,7 @@ public class GameWorld {
 		Player playership = Player.getShip();
 		if ((!gObjects.contains(playership))) {
 			gObjects.add(playership);
-			System.out.println(
-					"Your Ship has been added " + playership.toString());
+			System.out.println("Your Ship has been added " + playership.toString());
 		} else {
 			System.out.println("Ship Already exist");
 		}
@@ -66,11 +53,9 @@ public class GameWorld {
 		Player playership = Player.getShip();
 		if ((gObjects.contains(playership))) {
 			playership.incSpeed();
-			System.out.println(
-					"Player speed increased: " + playership.toString());
+			System.out.println("Player speed increased: " + playership.toString());
 		} else {
-			System.out
-					.println("Ship doesn't exist please add player ship first");
+			System.out.println("Ship doesn't exist please add player ship first");
 
 		}
 	}
@@ -79,11 +64,9 @@ public class GameWorld {
 		Player playership = Player.getShip();
 		if ((gObjects.contains(playership))) {
 			playership.decSpeed();
-			System.out.println(
-					"Player speed decreased: " + playership.toString());
+			System.out.println("Player speed decreased: " + playership.toString());
 		} else {
-			System.out
-					.println("Ship doesn't exist please add player ship first");
+			System.out.println("Ship doesn't exist please add player ship first");
 
 		}
 	}
@@ -94,8 +77,7 @@ public class GameWorld {
 			playership.turnLeft(5);
 			System.out.println("Player turned left: " + playership.toString());
 		} else {
-			System.out
-					.println("Ship doesn't exist please add player ship first");
+			System.out.println("Ship doesn't exist please add player ship first");
 
 		}
 	}
@@ -106,8 +88,7 @@ public class GameWorld {
 			playership.turnRight(5);
 			System.out.println("Player turned right: " + playership.toString());
 		} else {
-			System.out
-					.println("Ship doesn't exist please add player ship first");
+			System.out.println("Ship doesn't exist please add player ship first");
 
 		}
 	}
@@ -126,21 +107,19 @@ public class GameWorld {
 		 * ShipObject) { Player playership = (Player) gObjects.elementAt(i);
 		 * playership.incSpeed(); if (playership.getMissiles() > 0)
 		 * System.out.println("Fire"); gObjects.add(new
-		 * Missile(playership.getDirection(), playership.getSpeed(),
-		 * playership.getX(), playership.getY())); playership.fire();
+		 * Missile(playership.getDirection(), playership.getSpeed(), playership.getX(),
+		 * playership.getY())); playership.fire();
 		 * 
 		 * if (playership.getMissiles() == 0) // accidently removes ship
 		 * System.out.println("0 Missles, Head Back to the Station"); } }
 		 * 
-		 * } Player playership = Player.getShip(); if
-		 * ((gObjects.contains(playership))) { if (playership.getMissiles() > 0)
-		 * { System.out.println("Fire"); } gObjects.add(new
-		 * Missile(playership.getDirection(), playership.getSpeed(),
+		 * } Player playership = Player.getShip(); if ((gObjects.contains(playership)))
+		 * { if (playership.getMissiles() > 0) { System.out.println("Fire"); }
+		 * gObjects.add(new Missile(playership.getDirection(), playership.getSpeed(),
 		 * playership.getX(), playership.getY())); playership.fire(); if
 		 * (playership.getMissiles() == 0) {
 		 * System.out.println("0 Missles, Head Back to the Station"); } } else {
-		 * System.out.println("Ship doesn't exist please add player ship first"
-		 * );
+		 * System.out.println("Ship doesn't exist please add player ship first" );
 		 * 
 		 * }
 		 */
@@ -157,8 +136,7 @@ public class GameWorld {
 			playership.setX(512);
 			playership.setY(384);
 		} else {
-			System.out
-					.println("Ship doesn't exist please add player ship first");
+			System.out.println("Ship doesn't exist please add player ship first");
 
 		}
 	}
@@ -169,8 +147,7 @@ public class GameWorld {
 			System.out.println("Reloaded Weapons: " + playership.toString());
 			playership.reload();
 		} else {
-			System.out
-					.println("Ship doesn't exist please add player ship first");
+			System.out.println("Ship doesn't exist please add player ship first");
 
 		}
 	}
@@ -277,15 +254,13 @@ public class GameWorld {
 			if (gObjects.elementAt(i) instanceof Player) {
 				Player playership = (Player) gObjects.elementAt(i);
 				playership.move();
-				System.out.println(
-						"The player is moving" + playership.toString());
+				System.out.println("The player is moving" + playership.toString());
 			}
 
 			if (gObjects.elementAt(i) instanceof NonPlayer) {
 				Player NonPlayer = (Player) gObjects.elementAt(i);
 				NonPlayer.move();
-				System.out.println(
-						"The NonPlayer is moving" + NonPlayer.toString());
+				System.out.println("The NonPlayer is moving" + NonPlayer.toString());
 			}
 
 			if (gObjects.elementAt(i) instanceof Asteroid) {
@@ -299,12 +274,10 @@ public class GameWorld {
 				Missile missile = (Missile) gObjects.elementAt(i);
 				if (missile.getFuelLevel() > 0) {
 					missile.move();
-					System.out.println(
-							"This Missile is moving" + missile.toString());
+					System.out.println("This Missile is moving" + missile.toString());
 				}
 				if (missile.getFuelLevel() == 0)
-					System.out.println(
-							"Missile ran out of fuel" + missile.toString());
+					System.out.println("Missile ran out of fuel" + missile.toString());
 				gObjects.removeElementAt(i);
 			}
 		}

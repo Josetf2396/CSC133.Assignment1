@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.mycompany.ObjectTypes.*;
 
-public class NonPlayer extends SteerableGameObject{
+public class NonPlayer extends ShipObject{
 
 
 	private int missilecount = 10;

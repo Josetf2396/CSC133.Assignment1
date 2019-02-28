@@ -1,13 +1,7 @@
 package com.mycompany.ObjectTypes;
 
-public class ShipObject extends SteerableGameObject {
+public class ShipObject extends MoveableGameObject {
 
-	public void incSpeed() {
-		
-	}
-	public void decSpeed() {
-		
-	}
 	public void reload(){
 		
 	}
