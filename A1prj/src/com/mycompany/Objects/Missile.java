@@ -30,7 +30,7 @@ public class Missile extends MoveableGameObject {
 
 	public String toString(){
 		return 
-				"Missiles: " + super.toString() + 
+				" Missile: " + super.toString() + 
 				"fuel=" + this.fuel; 
 	}
 

@@ -8,10 +8,12 @@ import com.mycompany.Objects.Asteroid;
 
 public class GameWorld {
 	private int tick;
+	private int score;
 	private Vector<GameObject> gObjects = new Vector<GameObject>();
 
 	public void init() {
 		tick = 0;
+		score = 0;
 	}
 
 	public void addNewAstroid() {
@@ -175,13 +177,18 @@ public class GameWorld {
 			if (!removedMissile && gObjects.elementAt(i) instanceof MoveableGameObject) {
 				if (gObjects.elementAt(i) instanceof Missile) {
 					gObjects.removeElementAt(i);
-					removedMissile=true;
+					removedMissile = true;
 				}
 
 				if (!removedAsteroid && gObjects.elementAt(i) instanceof Asteroid) {
 					gObjects.removeElementAt(i);
 					removedAsteroid = true;
 				}
+			}
+			if (removedMissile == true && removedAsteroid == true) {
+				System.out.println("Player eliminated Asteroid +2");
+				score=score+2;
+				break;
 			}
 		}
 	}
@@ -195,11 +202,16 @@ public class GameWorld {
 					gObjects.removeElementAt(i);
 					removedMissile = true;
 				}
-				
+
 				if (!removedNPS && gObjects.elementAt(i) instanceof NonPlayer) {
 					gObjects.removeElementAt(i);
-					removedNPS =  true;
+					removedNPS = true;
 				}
+			}
+			if (removedMissile == true && removedNPS == true) {
+				System.out.println("Player eliminted nps +3");
+				score = score+5;
+				break;
 			}
 		}
 	}
@@ -218,12 +230,18 @@ public class GameWorld {
 				if (!removedPS && gObjects.elementAt(i) instanceof Player) {
 					playership.decrementLives();
 					gObjects.removeElementAt(i);
-					removedPS=true;
-					
+					removedPS = true;
+
 				}
 			}
+			if (removedMissile == true && removedPS == true) {
+				System.out.println("NPS has Exploded PS");
+				score = score-3;
+				playership.decrementLives();
+				break;
+			}
+
 		}
-		
 
 	}
 
@@ -233,6 +251,8 @@ public class GameWorld {
 		if ((gObjects.contains(playership))) {
 			playership.decrementLives();
 			gObjects.remove(playership);
+			score = score-2;
+			System.out.println("Player has crashed into an Asteroid");
 		}
 	}
 
@@ -250,8 +270,14 @@ public class GameWorld {
 				if (!removedPS && gObjects.elementAt(i) instanceof Player) {
 					playership.decrementLives();
 					gObjects.removeElementAt(i);
-					removedPS=true;
+					removedPS = true;
 				}
+			}
+			if (removedNPS == true && removedPS == true) {
+				System.out.println("Player and NPS have Collided");
+				score = score -2;
+				playership.decrementLives();
+				break;
 			}
 		}
 	}
@@ -278,6 +304,9 @@ public class GameWorld {
 				if (!removedAsteroid && gObjects.elementAt(i) instanceof Asteroid) {
 					gObjects.removeElementAt(i);
 					removedAsteroid = true;
+				}
+				if (removedNPS == true && removedAsteroid == true) {
+					System.out.println("NPS has collided with an Asteroid");
 				}
 			}
 		}
@@ -322,6 +351,10 @@ public class GameWorld {
 	}
 
 	public void print() {
+		System.out.println("Score = " + score);
+		System.out.println("Elapsed Time = "+ tick);
+		
+		
 
 	}
 
